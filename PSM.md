@@ -1,50 +1,8 @@
 PSM
 ================
-Qi Yumeng
 2024-02-18
 
 ## Load Data
-
-``` r
-library(tidyverse)
-```
-
-    ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ## ✔ dplyr     1.1.3     ✔ readr     2.1.4
-    ## ✔ forcats   1.0.0     ✔ stringr   1.5.0
-    ## ✔ ggplot2   3.4.4     ✔ tibble    3.2.1
-    ## ✔ lubridate 1.9.3     ✔ tidyr     1.3.0
-    ## ✔ purrr     1.0.2     
-    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ dplyr::filter() masks stats::filter()
-    ## ✖ dplyr::lag()    masks stats::lag()
-    ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
-library(MatchIt)
-library(lmtest)
-```
-
-    ## Loading required package: zoo
-    ## 
-    ## Attaching package: 'zoo'
-    ## 
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     as.Date, as.Date.numeric
-
-``` r
-library(sandwich)
-df = read_csv("https://raw.githubusercontent.com/gckc123/ExampleData/main/smoking_psyc_distress.csv")
-```
-
-    ## Rows: 8000 Columns: 10
-    ## ── Column specification ────────────────────────────────────────────────────────
-    ## Delimiter: ","
-    ## dbl (10): sex, indigeneity, high_school, partnered, remoteness, language, sm...
-    ## 
-    ## ℹ Use `spec()` to retrieve the full column specification for this data.
-    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 - sex (0: Female; 1: Male)
 - indigenous - Ingigenous status (0: Non-indigenous; 1: indigenous)
@@ -150,13 +108,15 @@ summary(match_obj)
 plot(match_obj, type = "jitter", interactive = FALSE)
 ```
 
-![](PSM_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](PSM_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
 ``` r
 plot(summary(match_obj), abs = FALSE)
 ```
 
-![](PSM_files/figure-gfm/unnamed-chunk-1-2.png)<!-- -->
+![](PSM_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
+
+## Output the result
 
 ``` r
 #Extract the matched data and save the data into the variable matched_data

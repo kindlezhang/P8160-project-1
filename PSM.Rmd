@@ -1,6 +1,5 @@
 ---
 title: "PSM"
-author: "Qi Yumeng"
 date: "2024-02-18"
 output: github_document
 ---
@@ -10,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Load Data
-```{r cars}
+```{r,include=FALSE}
 library(tidyverse)
 library(MatchIt)
 library(lmtest)
@@ -52,6 +51,7 @@ plot(match_obj, type = "jitter", interactive = FALSE)
 plot(summary(match_obj), abs = FALSE)
 ```
 
+## Output the result
 
 ```{r}
 #Extract the matched data and save the data into the variable matched_data
